@@ -2,7 +2,8 @@
 
 **Date:** 26 November 2026
 **Purpose:** Close dossier gap #5 (competition strategy) with a plan grounded in verified facts about how the UIU CSE Project Show actually works — and explicit "to be confirmed" flags where only the official rubric can settle a question.
-**Honesty rule for this document:** facts in §1 carry sources. Judging dimensions in §3 are *assumptions* until the official rubric arrives (dossier open-decision 6). Nothing here claims knowledge of the rubric we do not have.
+**Honesty rule for this document:** facts in §1 carry sources. Judging dimensions in §3 were *assumptions* until the official rubric arrived.
+**UPDATE (26 Nov 2026): the official judging rubric and video rules were obtained** from `Project Video Submission Guidelines-CSE-2124.docx` (uploaded by the team; repo: selection/sources/). §1 and §3 now carry the verified weights, and the implications have been re-derived — including the competition scan (36 registered Summer '26 teams: selection/competition-scan-summer26.md).
 
 ---
 
@@ -15,9 +16,11 @@
 | Two-stage structure | Initial evaluation → "top projects advancing to the final round showcase" | projectshow.uiucomputerclub.com (finalists page) |
 | Official platform | Registration, team portal, schedule, judging, winners run on projectshow.uiucomputerclub.com; Summer 2026 season active | same |
 | Recurring event | Spring 2026 showcase page on cse.uiu.ac.bd; per-season cycles with prize-giving ceremonies | cse.uiu.ac.bd event page |
-| **Official judging rubric** | **Not public.** Platform pages do not publish criteria/weights. | checked 26 Nov 2026 — must be obtained from supervisor/organizers |
+| **Official judging rubric** | **VERIFIED 26 Nov 2026** — weights in §3 | `video-submission-guidelines-cse2124.docx` (selection/sources/) |
+| Final video gate | Recommended teams upload a **max 10-minute English** demo video (slides + live hardware; 7 required sections incl. component-wise costing and min **3 features**) to the drive link from the show registration form, by committee deadline | same source |
+| Course viva | **15-mark viva**: naming modules (3), sensor working principles (3), MCU→actuator control incl. PID/filters + live operation (4), code walkthrough (remaining weight) | `viva-preparation-guideline.docx` (selection/sources/) |
 
-**What is NOT known (do not design against guesses):** the exact rubric categories and weights, whether Electronics Lab projects compete in the same pool as CSE lab courses, per-team demo time, first-stage submission format. Owner: team lead via supervisor + the platform's Register page. **Action: fill §3's weights column the day the rubric arrives.**
+**Still NOT known (do not design against guesses):** whether Electronics Lab teams compete in one pool or per-course pools, per-booth demo time at the physical showcase, Summer '26 deadlines. Owner: team lead via supervisor + the platform. The rubric weights themselves are now fact, not guesses.
 
 ---
 
@@ -32,20 +35,22 @@ A third consequence: most UIU show projects are software (web/app/IoT dashboards
 
 ---
 
-## 3. Assumed judging dimensions (until the rubric arrives)
+## 3. Verified judging rubric (26 Nov 2026) and what it changes
 
-Standard hardware-project-show dimensions, clearly labeled as assumptions to be re-weighted the day the official rubric lands:
+Official weights from the video-submission guidelines (used for final grading in the Project Show):
 
-| Dimension (assumed) | Weight (unknown — fill in) | CropGuard's evidence asset | Where it comes from |
+| Criterion | Weight | CropGuard's evidence asset | Strategy reading |
 |---|---|---|---|
-| Technical depth / engineering quality | ? | Power budget with bench tests T1–T5; rail architecture; stall-cutoff firmware; module interface spec | research/motor-power-budget.md; dossier §4 |
-| Innovation / novelty (honest) | ? | Low-cost modular quick-change platform for BD raised-bed geometry; buzz-pollination assist is a genuinely uncommon robot operation | fourth-operation-analysis.md; digest prior-art section |
-| Live demo quality | ? | 3-minute script; every feature live and repeatable; 60-second reset | §5 below |
-| Measurable results | ? | Live metrics board: pick rate, placement error, weed removals, spray hit %, pollen-burst counts vs control | §6 below |
-| Real-world usefulness | ? | Brinjal/raised-bed focus with local cost case in BDT; labour-cost framing from dossier | dossier §1, §7 |
-| Documentation / presentation | ? | This repo (research + reports), poster, one-pager, video evidence | reports/ (to be built) |
+| **Features & Hardware Implementations** | **40%** | Four distinct operations, module-swap interface, rail architecture, bench tests T1–T5 | The single decisive criterion. Demo stability and feature count dominate everything else; a 3-feature robot that never fails beats a 6-feature robot that sometimes does |
+| Project Idea & Novelty | 15% | Buzz-pollination assist; seedling transplanting on raised beds; measured-reliability process | Claim novelty at the *operation* level — "agri robot" is now 28% of the field (competition scan), the category itself earns nothing |
+| Real-Life Application & Impact | 15% | Brinjal/raised-bed labour story; realistic (non-exaggerated) claims — explicitly required by the video rules | Keep the claims-discipline table (§4) — the rubric literally says "realistic examples, not exaggerated claims" |
+| Cost Effectiveness | 10% | Priced BOM with per-line sources; video section 5 = the BOM verbatim | Small weight, but the BOM is already built — free points |
+| Tidiness & Professionalism | 10% | Fused rails, star ground, e-stop rules, wiring hygiene | Only pays if the physical build matches the documents |
+| Presentation | 10% | 3-min booth script; 19-slide official template maps 1:1 to our content | New deliverable: the 10-minute English video (script = §5 expanded ~3×) |
 
-The dossier's own five acceptance tests (live, observable, repeatable, depth, research value) already anticipate these dimensions — the strategy is to make each one *visible at the booth*, not merely true.
+The dossier's five acceptance tests (live, observable, repeatable, depth, research value) map almost exactly onto Features (40%) + Tidiness (10%) + the video's demo section — the strategy is to make each one *visible in the 10-minute video and at the booth*, not merely true.
+
+**Competition scan implication (verified same day):** of 36 registered Summer '26 teams, 10 are agriculture/aquaculture and 3 build multi-operation agri robots with mobile control (RuBiSTa, Phoenix, Breadboard Bandits). The pitch must therefore lead with the *measured operations* and *engineering evidence*, never with "smart agriculture robot". Full table: selection/competition-scan-summer26.md.
 
 ---
 
@@ -137,10 +142,11 @@ Checklist assembled *before* registration closes (dates unknown — monitor the 
 
 ## 10. Immediate actions (owner: team)
 
-1. **Get the official rubric + registration dates** from the supervisor / projectshow.uiucomputerclub.com — fills §3 weights and the schedule column. *(Blocked on organizers; everything above stands without it, weights may re-order emphasis.)*
-2. **Confirm venue rules:** can the soil plot enter the hall? power strip availability? bench-board fallback decides §6 setup.
-3. **Order the Week-1 first-purchase list (BOM §4)** — the pull test (T1) needs the chassis more than anything else.
-4. **Measure the real brinjal bed** (dossier §17.1) — row spacing sets gripper reach and wheel path; plot levelness requirement gets real numbers.
-5. **Assign owners:** metrics dashboard, reset drill, video/one-pager, registration form — four members, four deliverables.
+1. ~~Get the official rubric~~ **DONE (26 Nov 2026)** — weights in §3. Still needed from supervisor/platform: registration **deadlines**, whether pools are per-course, per-booth demo time.
+2. **Produce the 10-minute English video** (owner: assign) — expand the §5 script to the 7 required sections; the live-hardware section must show every feature, and section 5 (costing) is the priced BOM read aloud. Rehearse to ≤10:00; over-length loses marks.
+3. **Confirm venue rules:** can the soil plot enter the hall? power strip availability? bench-board fallback decides §6 setup.
+4. **Order the Week-1 first-purchase list (BOM §4)** — the pull test (T1) needs the chassis more than anything else.
+5. **Measure the real brinjal bed** (dossier §17.1) — row spacing sets gripper reach and wheel path; plot levelness requirement gets real numbers.
+6. **Assign owners:** 10-min video, metrics dashboard, reset drill, one-pager/report, registration form — five deliverables across four members.
 
 *Standing rule: update this document — not hallway memory — when the rubric, dates, or venue answers arrive.*
